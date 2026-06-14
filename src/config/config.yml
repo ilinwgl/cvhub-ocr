@@ -1,0 +1,10 @@
+paddleocr:
+  detector:
+    model_name: PP-OCRv5_server_det
+    model_dir: models/paddle_ocr/PP-OCRv5_server_det_infer
+    device: gpu
+
+  recognizer:
+    model_name: PP-OCRv5_server_rec
+    model_dir: models/paddle_ocr/PP-OCRv5_server_rec_infer
+    device: gpu
