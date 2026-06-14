@@ -2,15 +2,29 @@
 
 ## Module Pipeline Process
 ```
-Client
-  ↓ gRPC request (image path / PDF path)
-server.py
+receive request
+  |
+  | server.py
+  ↓ 
+load config
+  |
+  | config/
+  ↓ 
+image input and preprocess
+  |
+  | preprocess/
   ↓
-preprocessor.py → convert to numpy array
+build ocr engine
+  |
+  | detector/ + recognizer/ => engine/
   ↓
-engine.py → PaddleOCR recognition
+engine run
+  |
+  | engine/
   ↓
-schema.py → structured result
-  ↓ gRPC response
-Client
+postprocess/
+  |
+  | postprocess/
+  ↓
+send response -- server.py
 ```
