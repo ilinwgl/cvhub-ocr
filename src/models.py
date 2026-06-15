@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from enum import Enum
 
 @dataclass
 class DetectionResult:
@@ -14,3 +15,7 @@ class RecognitionResult:
 class OCRResult:
     det_result: DetectionResult
     rec_result: RecognitionResult
+
+class EngineType(str, Enum):
+    """Supported OCR engine types."""
+    PADDLE_OCR = "PADDLE_OCR"
